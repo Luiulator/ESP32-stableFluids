@@ -1,7 +1,9 @@
 CompileFlags:
+  CompilationDatabase: .
   Add:
     - -std=c++17
     - -Wall
     - -Wextra
-    - -IESP32Implementation/include
-    - -IESP32Implementation/include/stable_fluids
+    - -I../include
+    - -Iinclude
+

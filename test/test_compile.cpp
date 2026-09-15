@@ -1,5 +1,5 @@
-#include "../include/stable_fluids/StableFluids.hpp"
-#include "../include/stable_fluids/forces.hpp"
+#include "stable_fluids/StableFluids.hpp"
+#include "stable_fluids/forces.hpp"
 #include <iostream>
 
 int main() {
