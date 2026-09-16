@@ -6,8 +6,8 @@
 
 /* Aquí el código de la ESP32 */
 
-constexpr size_t NX = 16;
-constexpr size_t NY = 4;
+constexpr size_t NX = 64;
+constexpr size_t NY = 16;
 
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -110,7 +110,7 @@ void loop() {
   stable_fluids::add_buoyancy(grid, 9.81f, 0.0f);
 
   uint32_t start_us = micros();
-  stable_fluids::step(grid, 20);
+  stable_fluids::step(grid, 25);
   uint32_t elapsed_us = micros() - start_us;
 
   total_time_us += elapsed_us;
