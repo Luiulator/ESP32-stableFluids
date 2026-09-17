@@ -8,11 +8,11 @@ A C++ port of [my Julia module](https://github.com/Luiulator/colourlessFD) that 
 
 - This software solves the incompressible Navier-Stokes equations. That's the Continuity Equation
 
-$$ \nabla \cdot \bold{u} = 0 $$
+$$ \nabla \cdot \mathbf{u} = 0 $$
 
 and the Momentum Equation
 
-$$ \frac{\partial \bold{u}}{\partial t} + (\bold{u} \cdot \nabla) \bold{u} = \nu \nabla^2 \bold{u} + \frac{1}{\rho} \nabla p + \frac{1}{\rho}\bold{f} $$
+$$ \frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla) \mathbf{u} = \nu \nabla^2 \mathbf{u} + \frac{1}{\rho} \nabla p + \frac{1}{\rho}\mathbf{f} $$
 
 It does so by breaking down each term of the sum and solving them separately, then summing up. Lastly, it applies a correction pressure so that we enforce that the fluid remains incompressible.   
 
