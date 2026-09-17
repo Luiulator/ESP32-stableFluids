@@ -1,14 +1,25 @@
 # [Stable Fluids](https://github.com/Luiulator/ESP32-stableFluids)
 
-A C++ port of [my Julia module](https://github.com/Luiulator/colourlessFD) that implements the Stable Fluids algorithm, which is commonly used to simulate smoke and other slightly dense gaseous flows in videogames in real time. It is quite lightweight and inconditionally stable. As such, modern microcontrollers like the ESP32 should be able to run it at sufficient framerates for it to look "fluid" enough too. This is my attempt at that.
+A C++ port of [my Julia module](https://github.com/Luiulator/colourlessFD) that implements the Stable Fluids algorithm, which is commonly used to simulate smoke and other slightly dense gaseous flows in videogames in real time. It is quite lightweight and unconditionally stable. As such, modern microcontrollers like the ESP32 should be able to run it at sufficient framerates for it to look "fluid" enough too. This is my attempt at that.
 
 
 
 ## A few Highlights
 
+- This software solves the incompressible Navier-Stokes equations. That's the Continuity Equation
+
+$$ \nabla \cdot \bold{u} = 0 $$
+
+and the Momentum Equation
+
+$$ \frac{\partial \bold{u}}{\partial t} + (\bold{u} \cdot \nabla) \bold{u} = \nu \nabla^2 \bold{u} + \frac{1}{\rho} \nabla p + \frac{1}{\rho}\bold{f} $$
+
+It does so by breaking down each term of the sum and solving them separately, then summing up. Lastly, it applies a correction pressure so that we enforce that the fluid remains incompressible.   
+
+- Stable Fluids is, as per its name, unconditionally stable. That means you won't get infinite velocities, vorticities or whatever magnitudes, under any circumstance. It is then theoretically possible to use a dt as large as you wish, although at some point the physics will completely break. Feel free to tweak it and find out!
 
 
-
+*Be advised!!!* As a tradeoff for the unconditional stability, this method sacrifices precise recreation of fluid dynamics. You should expect fluid-like motion, but do not use it for any sensitive purpose as it will not behave physically.
 
 ## Some Benchmarks
 

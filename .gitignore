@@ -10,3 +10,6 @@ compile_commands.json
 *.elf
 *.hex
 *.a
+
+#workspace de vscode
+*.code-workspace
