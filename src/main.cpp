@@ -1,7 +1,6 @@
 #include "stable_fluids/StableFluids.hpp"
 #include "stable_fluids/forces.hpp"
 
-#if defined(ARDUINO)
 #include <Arduino.h>
 
 /* Aquí el código de la ESP32 */
@@ -128,11 +127,3 @@ void loop() {
 
   delay(1);
 }
-
-#else
-#include <chrono>
-#include <iostream>
-
-/* Aquí el código para nativo */
-
-#endif
