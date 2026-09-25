@@ -21,7 +21,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 /*
 Instancio la malla. tenemos que instanciarla como variable global para que se
-vaya a la SRAM de la ESp32 De lo contrario, intentaría alocar los bytes
+vaya a la SRAM de la ESp32. De lo contrario, intentaría alocar los bytes
 correspondientes a la stack de 8 KB, o sea, stack overflow.
 */
 
